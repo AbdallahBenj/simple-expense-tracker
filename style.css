@@ -10,14 +10,41 @@ body {
   padding: 20px;
 }
 
-input, button {
+input {
+  width: calc(100% - 20px);
+  margin: 5px 0;
+  padding: 8px;
+}
+
+button {
   width: 100%;
   margin: 5px 0;
   padding: 8px;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0, 16px;
+}
+
 li {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 5px 0;
+}
+
+.remove-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  width: 30px;
+  height: auto;
+  border-radius: 50%;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  cursor: pointer;
 }

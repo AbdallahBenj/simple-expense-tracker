@@ -14,11 +14,38 @@ function render() {
   expenses.forEach((exp, index) => {
     sum += exp.amount;
 
+    // const li = document.createElement("li");
+    // li.innerHTML = `
+    //   ${exp.desc} - $${exp.amount}
+    //   <button class='remove-btn' onclick="deleteExpense(${index})">x</button>
+    // `;
+
+    // test start
+
     const li = document.createElement("li");
-    li.innerHTML = `
-      ${exp.desc} - $${exp.amount}
-      <button onclick="deleteExpense(${index})">x</button>
-    `;
+
+    // text content
+    const text = document.createElement("span");
+    text.textContent = `${exp.desc} - $${exp.amount}`;
+
+    // remove button
+    const button = document.createElement("button");
+    button.textContent = "x";
+    button.classList.add("remove-btn");
+
+    // event
+    button.addEventListener("click", () => {
+      deleteExpense(index);
+    });
+
+    // append elements
+    li.appendChild(text);
+    li.appendChild(button);
+
+    list.appendChild(li);
+
+    //test end
+
     list.appendChild(li);
   });
 
